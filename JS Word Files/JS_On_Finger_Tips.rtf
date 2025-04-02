@@ -1,0 +1,229 @@
+{\rtf1\ansi\ansicpg1252\cocoartf2821
+\cocoatextscaling0\cocoaplatform0{\fonttbl\f0\fnil\fcharset0 STIXTwoMath-Regular;}
+{\colortbl;\red255\green255\blue255;}
+{\*\expandedcolortbl;;}
+\paperw11900\paperh16840\margl1440\margr1440\vieww11520\viewh8400\viewkind0
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+
+\f0\fs24 \cf0 \
+\
+1. find an element: element = document.querySelector('.className')\
+2. clear everyhting inside an element: element.innerHTML = "";\
+3. create a new element: element = document.createElement("div")\
+4. add a class to an element: element.classList.add('.className')\
+5. check if className exists on the element: element.classList.contains('className')\
+6. set an attribute(say id) to an  element: element.setAttribute('id', 10)\
+7. Add childElement : parentElement.append(childElement)\
+8. Change style of an element: element.style.display = "flex";\
+9. remove element:  1) element.remove() \
+					2) parent.removeChild(child)\
+10. refer the parent elemnt: element.parentNode\
+11. to set any text to element: element.innerText = 'HelloWorld!'\
+\
+// methods to find the ancestor, desendent, and checking if a child exists for an element\
+11. find first ancestor: element.cloest(selector)\
+12. find all the children matching the selctor: element.find(selector)\
+13. check if any child exists : element.contains(child); note: here child is an element and not a selector\
+\
+*******************************\
+ Event Delegation concept: \
+**********************************\
+\
+list.addEventListener('click', (e) => \{\
+\
+	// clicked Element: e.target\
+	// clicked element tag Name: e.target.tagName\
+	// get attribute of the target element: e.target.'attributeName'; Ex: to get id -> e.target.id\
+	// get class name of the cicked element: e.target.className\
+	// target the parentNode: e.target.parentNode\
+	// mouse click co-ordinates: e.clientX, e.clientY\
+\})\
+\
+mouse events -> mouseup, mousemove, mousedown\
+React handler for these: onMouseMove, onMouseUp, onMouseDown\
+draggable div: https://www.youtube.com/shorts/ogyTyL0SEko \
+\
+getBoundingClientRect():\
+rect = element.getBoundingClientRect();\
+rect.left,\
+rect.top\
+\
+String methods: \
+\
+String.prototype.at()\
+String.prototype.charAt()\
+String.prototype.charCodeAt(); opposite of: String.fromCharCode(65) returns 'A'\
+String.prototype.includes()\
+\
+String.prototype.indexOf(searchTerm)\
+String.prototype.endsWith(searchTerm)\
+String.prototype.lastIndexOf(searchTerm)\
+\
+String.prototype.concat()\
+String.prototype.replace()\
+String.prototype.substring(startIndex, endIndexExcluded || tillEnd) ; endIndexExcluded = startIndex + noOfChars\
+String.prototype.toLowerCase()\
+String.prototype.toUpperCase()\
+String.prototype.trim()\
+String.prototype.substring(start, end) // end index not included - returns a new copy\
+String.prototype.slice(start, end) // end index not included - returns a new copy of sliced array(both substring and slice on string are same)\
+string.length\
+\
+Array Methods:\
+\
+Array.isArray();\
+arr.includes();\
+arr.slice(start, end) // end index not included - can use negative index also for end\
+arr.splice(start, deleteCount, item1, item2, /* \'85, */ itemN); // item1, item2 ...itemN are items to be added\
+arr.flat() // give number as param to flat till that depth, or pass 'Infinity'\
+delete an element at an index: use splice: arr.splice(index, 1);\
+\
+const firstElement = array1.shift(); // removes 1st ele and returns\
+arr.unshift(4, 5) // adds 4 & 5 to index 0 & 1\
+create an array from 0 to n, -> [...Array(n).keys()]\
+\
+\
+Map in JS:\
+\
+const m = new Map();\
+\
+m.set(key, value);\
+m.get(key)\
+m.has(key)\
+m.delete(key)\
+m.size // not a functoin but a property\
+m.clear() // deletes all keys\
+m.keys() -> Returns Iterator object -> iterate using next() -> and use next().value prooperty to access the key\
+m.values() -> returns Iterator object -> -> iterate using next() -> and use next().value prooperty to access the value\
+\
+m.keys().next().value -> returns the first value\
+iteration: \
+\
+for (const [key, value] of myMap) \{\
+  console.log(`$\{key\} = $\{value\}`);\
+\}\
+\
+Set in js:\
+\
+const s = new Set([1,2,3,4]);\
+s.add(5); // all other functions are same in map\
+\
+s.has(key)\
+s.delete(key)\
+to convert back to array -> arr = [...s]; // use spread operator\
+****************************************\
+Form data concept\
+****************************************\
+\
+formData = new FormData(formElement)\
+values = [...formData.entries()]  -> gives key:value where the key is name and value is the value\
+to reset from: formElement.reset() \
+\
+\
+\
+for...in (vs) for...of\
+	list = ['a', 'b', 'c'];\
+	for(i in list) // 0,1,2 // for...in gives index - i for index(keys)\
+	for(i of list) // 'a', 'b', 'c' // for ..of gives values in object\
+\
+\
+CSS:\
+transform: rotate(90deg)\
+transform: scale(2), scaleX(0.5), scaleY(1.5) \
+transform: translate(x, y)  , x & y an be in px, %(of its width)\
+\
+\
+Animation: \
+1. transition property:\
+\
+	transition prooperty must be used on the base class and not the class on which we want animation.\
+	syntax: transition: transform 1s; where transform is the property name  \
+	if we want to add the way it behaves: 3rd optional is the way. transition: transform 1s linear/ease-in-out;\
+\
+animation: KeyFramesName timePeriod repeatNo forwards;\
+\
+@keyframes left-to-right \{\
+	0% \{ transform: translateX:(100%)\}\
+	100% \{ transform: translate(0)\}\
+\}\
+\
+note: animation keyframes remove all the property in the keyframe once its done and hence the orignal properties get applied after the animation.\
+	  If we need to perist the new animation, we need to specify keyword 'forwards' which means that the 100% property persists at the end.\
+	  \
+	  \
+3 ways to center-align  a div:\
+\
+1.Using flex:\
+	.div \{\
+		display: flex;\
+		justify-content: center;\
+		align-items: center;\
+	\}\
+2. using translate & adsolute(make parent as relative):\
+	div \{\
+		display: absolute;\
+		content: '';\
+		top: 50%;\
+		left: 50%;\
+		transform: translate(-50%, -50%)\
+	\}\
+\
+\
+\
+use of grid to make square boxes (say 3 X 3)\
+config = [ [1,1,1],\
+		   [1,0,1],\
+		   [1,1,1],\
+		 ]\
+.grid \{\
+	display: grid;\
+	grid-template-columns: repeat(3, 1fr);\
+	gap: 20px;\
+\}\
+\
+things to note while making fetch call in React useEfect. \
+ - use of abortController.\
+ \
+	useEffect(() => \{\
+		const controller = new AbortController();\
+		fetch(`www.fetchThis.com/$\{id\}`, \{ signal: controller.signal \})\
+		\
+		return () => \{\
+			controller.abort();\
+		\}\
+	\}, [id]) \
+        \
+\
+use of intersection Observer in the infiniteScroll \
+ - const Observer = new IntersectionObserver((entries) => \{\
+	// entries contain all the subscribed obervers\
+	if(entries[0].isIntersecting) \{\
+		// do things which you want to do\
+		// unobserve if you need to if this is inside the useEffect and used for infinte scroling\
+	\}\
+ \}, \{threshold: 0.5\});\
+\
+observer.observe(element);\
+observe.unobserve(element);\
+\
+observer.disconnect(); // in the cleanup\
+\
+\
+- localStorage and sessionStorage \
+Local storage works by accepting data in key-value pairs. \
+It retains the data even when the user refreshes the page or closes the tab or browser\
+Local storage can only store strings\
+if you need to store values like objects or arrays, you first need to get a string representation of the value. \
+You do this using the JSON.stringify()\
+\
+localStorage.setItem(key, value);\
+const cat = localStorage.getItem(key);\
+localStorage.removeItem(key)\
+localStorage.clear(); // clear all localstorage\
+\
+similar for sessionStorage\
+\
+\
+\
+maximum value of a number: Number.MAX_VALUE;\
+minimum value of a number: Number.MIN_VALUE;}
