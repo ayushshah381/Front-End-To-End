@@ -1,202 +1,195 @@
-{\rtf1\ansi\ansicpg1252\cocoartf2821
-\cocoatextscaling0\cocoaplatform0{\fonttbl\f0\fswiss\fcharset0 Helvetica;}
-{\colortbl;\red255\green255\blue255;}
-{\*\expandedcolortbl;;}
-\paperw11900\paperh16840\margl1440\margr1440\vieww11520\viewh8400\viewkind0
-\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+𝗟𝗲𝘃𝗲𝗹 𝟭: 𝗕𝗮𝘀𝗶𝗰
+1. Is Javascript single-threaded?
+2. Explain the main component of the JavaScript Engine and how it works.
+3. Explain the event loop in JavaScript and how it helps in asynchronous programming.
+4. Difference between var, let, and const ?
+5. Different data types in Javascript?
+    primitive datatypes: Number, String, Boolean, null, undefined, Symbol, BigInt
+    Object Types: Object, Array, Function, Date, RegExp, Map, Set
 
-\f0\fs24 \cf0 \uc0\u55349 \u56799 \u55349 \u56818 \u55349 \u56835 \u55349 \u56818 \u55349 \u56825  \u55349 \u57325 : \u55349 \u56789 \u55349 \u56814 \u55349 \u56832 \u55349 \u56822 \u55349 \u56816 \
-1. Is Javascript single-threaded?\
-2. Explain the main component of the JavaScript Engine and how it works.\
-3. Explain the event loop in JavaScript and how it helps in asynchronous programming.\
-4. Difference between var, let, and const ?\
-5. Different data types in Javascript?\
-    primitive datatypes: Number, String, Boolean, null, undefined, Symbol, BigInt\
-    Object Types: Object, Array, Function, Date, RegExp, Map, Set\
-\
-6. What is callback function and callback hell ?\
-    A callback function is a function that is passed as an argument to another function and \
-    is executed after some operation has been completed. Callbacks are commonly used in \
-    asynchronous programming to ensure that certain code is executed only after an asynchronous operation\
-    has finished.\
-    \
-    Callback hell refers to a situation where multiple nested callbacks make the code difficult \
-    to read and maintain. This often happens when performing several asynchronous operations \
-    in sequence, leading to deeply nested code structures.\
-\
-7. What is Promise and Promise chaining?\
-    Promise is a container for a future value of success or a failure.\
-    It will eventually complete.\
-\
-    Promise chaining is a technique where multiple asynchronous operations are performed in sequence, with each operation starting after the previous one has completed. This is achieved by returning a new Promise from the then method, allowing the next then method to be called.\
-8. What is async/await ?\
-    async/await\
-    async/await is a modern syntax in JavaScript that allows you to write asynchronous code in a more synchronous and readable manner.\
-    It is built on top of Promises and provides a way to handle asynchronous operations without the \
-    need for explicit chaining or deeply nested callbacks.\
-\
-    async Function\
-    An async function is a function declared with the async keyword. \
-    It always returns a Promise, and within the function, you can use the await keyword to \
-    pause(suspend) the execution until a Promise is resolved or rejected.\
-\
-    await Keyword\
-    The await keyword can only be used inside an async function. \
-    It pauses the execution of the function until the Promise is resolved, \
-    and then returns the resolved value. If the Promise is rejected, it throws an error \
-    that can be caught using a try/catch block.\
-\
-9. What is the difference between == and === operators ?\
-10. Different ways to create an Object in Javascript ?\
-    1. Object Literal\
-        The simplest way to create an object is using an object literal.\
-\
-    2. Object Constructor\
-        You can create an object using the Object constructor.\
-\
-    3. Constructor Function\
-        You can define a constructor function and use the new keyword to create an instance of the object.\
-    4. Object.create()\
-        The Object.create() method creates a new object with the specified prototype object and properties.\
-        let proto = \{\
-            greet: function() \{\
-                console.log("Hello!");\
-            \}\
-        \};\
-        let obj = Object.create(proto);\
-        obj.name = "John";\
-        obj.age = 30;\
-\
-    5. ES6 Class Syntax\
-        ES6 introduced classes, which provide a more convenient and clearer syntax to create constructor functions and handle inheritance.\
-    6. Factory Function\
-        A factory function is a function that returns a new object.\
-    7. Using JSON\
-        You can create an object by parsing a JSON string.\
-\
-\
-11. What is rest and spread operator?\
-    The rest operator (...) allows you to represent an indefinite number of arguments as an array. \
-    It is used in function parameters to collect all remaining arguments into a single array.\
-    function sum(...numbers) \{\
-        return numbers.reduce((acc, curr) => acc + curr, 0);\
-    \}\
-\
-    console.log(sum(1, 2, 3, 4)); // Output: 10\
-\
-    The spread operator (...) allows you to expand an iterable (like an array or a string) into individual elements. \
-    It is used in various contexts, such as function calls, array literals, and object literals.\
-\
-12. What is a higher-order function?\
-    A higher-order function is a function that either:\
-        Takes one or more functions as arguments, or\
-        Returns a function as its result.\
-        Higher-order functions are a key feature of functional programming and allow for more abstract and flexible code.\
-    \
-    Benefits of Higher-Order Functions:\
-        Abstraction: They allow you to abstract common patterns and behaviors, making your code more modular and reusable.\
-        Flexibility: They enable you to create more flexible and composable functions.\
-        Readability: They can make your code more readable and expressive by reducing boilerplate code.\
-        Higher-order functions are a powerful tool in JavaScript that can help you write more concise, maintainable, and expressive code\
-\
-\
-\uc0\u55349 \u56799 \u55349 \u56818 \u55349 \u56835 \u55349 \u56818 \u55349 \u56825  \u55349 \u57326 : \u55349 \u56796 \u55349 \u56827 \u55349 \u56833 \u55349 \u56818 \u55349 \u56831 \u55349 \u56826 \u55349 \u56818 \u55349 \u56817 \u55349 \u56822 \u55349 \u56814 \u55349 \u56833 \u55349 \u56818 \
-13. What is Closure? What are the use cases of Closures?\
-14. Explain the concept of hoisting in JavaScript.\
-15. What is a Temporal dead zone?\
-16. What is a prototype chain? and Object.create() method?\
-    Prototype Chain: When you try to access a property or method on an object, JavaScript first looks for that property on the object itself. If it doesn't find it, it looks at the object's prototype. This process continues up the chain until the property is found or the end of the chain is reached (usually Object.prototype, which is the top of the chain)\
-    The prototype chain is a fundamental concept in JavaScript that allows objects to inherit properties and methods from other objects. This chain is formed by linking objects through their prototypes, enabling a form of inheritance and property lookup.\
-\
-17. What is the difference between Call, Apply, and Bind methods?\
-18. What are lambda or arrow functions?\
-    Differences from Traditional Functions:\
-    1. this Binding: Arrow functions do not have their own this context. Instead, they inherit this from the enclosing lexical context. This makes them particularly useful for writing methods inside objects or classes where you want to preserve the this context.\
-\
-    2. No arguments Object: Arrow functions do not have their own arguments object. If you need to access the arguments passed to an arrow function, you should use rest parameters.\
-\
-    3. Cannot be used as Constructors: Arrow functions cannot be used with the new keyword. They are not suitable for defining constructor functions.\
-\
-19. What is the currying function?\
-    Currying is a powerful technique in functional programming that transforms a function with multiple arguments into a sequence of functions, each taking a single argument. \
-    It allows for partial application of functions, making it easier to create specialized functions \
-    from general ones. Currying can lead to more modular, reusable, and readable code.\
-\
-20. What are the features of ES6?\
-    Arrow Functions, Classes, Template Literals(backtick - a way to embed expressions within string literals),\
-    Destructuring Assignment, Default parameters, Rest and Spread Operators, let & const, Promises, Iterators and Generators\
-\
-\uc0\u55349 \u56799 \u55349 \u56818 \u55349 \u56835 \u55349 \u56818 \u55349 \u56825  \u55349 \u57327 : \u55349 \u56792 \u55349 \u56837 \u55349 \u56829 \u55349 \u56818 \u55349 \u56831 \u55349 \u56833 \
-21. What is Execution context, execution stack, variable object, scope chain?\
-22. What is the priority of execution of callback, promise, setTimeout, process.nextTick()?\
-    process.nextTick() has the highest priority and is executed before any other asynchronous tasks.\
-    Microtasks in microtask queues (like promises & Mutation Observers) are executed after the current synchronous code and process.nextTick().\
-    Timers in callback queue (like setTimeout) are executed after microtasks.\
-    I/O Callbacks are executed after timers.\
-\
-23. What is the Factory function and generator function?\
-    Factory Function\
-        A factory function is a function that returns a new object. It is a way to create objects without using the new keyword or class-based syntax. Factory functions can be used to create multiple instances of an object with similar properties and methods.\
-    Generator Function\
-        A generator function is a special type of function that can be paused and resumed, allowing you to produce a sequence of values over time. Generator functions are defined using the function* syntax and use the yield keyword to produce values.\
-\
-    Key Features of Generator Functions\
-        Pause and Resume: Generator functions can be paused at any yield expression and resumed later, allowing for more control over the execution flow.\
-        Iterators: Generator functions return an iterator object, which conforms to the iterator protocol and can be used in loops like for...of.\
-        State Management: Generators can maintain their own state between executions, making them useful for tasks like implementing iterators, handling asynchronous operations, and more.\
-\
-\
-24. Different ways to clone (Shallow and deep copy of object) an object?\
-    Shallow Copy: Copies the object's properties, but nested objects are shared between the original and the copy.\
-        Methods: Object.assign(), Spread Operator (...)\
-    Deep Copy: Copies the object and all nested objects, ensuring no shared references.\
-        Methods: JSON.parse(JSON.stringify()), Recursive Function, Lodash's cloneDeep\
-\
-25. How to make an object immutable? (seal and freeze methods)?\
-    Object.freeze(): Makes an object immutable but only performs a shallow freeze.\
-    Deep Freeze: Recursively freezes an object and all nested objects.  \
-    Object.seal(): Prevents adding new properties and marks existing properties as non-configurable but allows modification of existing properties.\
-    Immutable.js: Provides persistent immutable data structures for complex applications.\
-\
-26. What is Event and event flow, event bubbling and event capturing?\
-    Event: An action or occurrence in the browser (e.g., click, load, keypress).\
-    Event Flow: The order in which events are received and processed in the DOM.\
-    Event Capturing: Event propagates from the root to the target element.\
-    Event Bubbling: Event propagates from the target element to the root.\
-    Event Listeners: Functions that handle events during capturing or bubbling phases.\
-    Stopping Propagation: Use event.stopPropagation() to prevent further propagation of the event\
-\
-27. What is Event delegation?\
-28. What are server-sent events?\
-    Server-Sent Events (SSE)\
-        Server-Sent Events (SSE) is a standard allowing servers to push real-time updates to web clients over a single, long-lived HTTP connection. Unlike WebSockets, which provide full-duplex communication, SSE is unidirectional, meaning data flows from the server to the client only.\
-\
-    How SSE Works\
-        Client Requests Updates: The client establishes a connection to the server using a special HTTP request.\
-        Server Sends Updates: The server keeps the connection open and sends updates to the client as they become available.\
-        Client Receives Updates: The client listens for incoming messages and processes them as they arrive.\
-    \
-    Advantages of SSE\
-        Simple to Implement: SSE is easier to implement compared to WebSockets, especially for unidirectional data flow.\
-        Automatic Reconnection: The browser automatically handles reconnection if the connection is lost.\
-        Built-in Support: SSE is supported by most modern browsers without the need for additional libraries.\
-29. What is a web worker or service worker in javascript?\
-\
-    Web Workers are a feature in JavaScript that allows you to run scripts in background threads\
-    Key Features of Web Workers\
-        Background Execution: Web Workers run in the background, separate from the main execution thread.\
-        Non-blocking: They allow you to perform heavy computations without freezing the UI.\
-        Communication: Communication between the main thread and the worker is done via message passing using the postMessage method and the onmessage event handler.\
-    Web Workers:\
-        Run scripts in background threads.\
-        Used for computationally intensive tasks.\
-        Communicate with the main thread via message passing.\
-        Example: Performing heavy computations without blocking the UI.\
-    \
-    Service Workers:\
-        Act as a proxy between the web application and the network.\
-        Enable offline support, background sync, and push notifications.\
-        Have a well-defined lifecycle (install, activate, fetch).\
-        Example: Caching assets for offline use and handling network requests.\
-        Both Web Workers and Service Workers provide powerful capabilities for improving the performance and user experience of web applications by offloading tasks to background threads and enabling advanced features like offline support and push notifications\
-30. How to compare 2 JSON objects in javascript?}
+6. What is callback function and callback hell ?
+    A callback function is a function that is passed as an argument to another function and 
+    is executed after some operation has been completed. Callbacks are commonly used in 
+    asynchronous programming to ensure that certain code is executed only after an asynchronous operation
+    has finished.
+    
+    Callback hell refers to a situation where multiple nested callbacks make the code difficult 
+    to read and maintain. This often happens when performing several asynchronous operations 
+    in sequence, leading to deeply nested code structures.
+
+7. What is Promise and Promise chaining?
+    Promise is a container for a future value of success or a failure.
+    It will eventually complete.
+
+    Promise chaining is a technique where multiple asynchronous operations are performed in sequence, with each operation starting after the previous one has completed. This is achieved by returning a new Promise from the then method, allowing the next then method to be called.
+8. What is async/await ?
+    async/await
+    async/await is a modern syntax in JavaScript that allows you to write asynchronous code in a more synchronous and readable manner.
+    It is built on top of Promises and provides a way to handle asynchronous operations without the 
+    need for explicit chaining or deeply nested callbacks.
+
+    async Function
+    An async function is a function declared with the async keyword. 
+    It always returns a Promise, and within the function, you can use the await keyword to 
+    pause(suspend) the execution until a Promise is resolved or rejected.
+
+    await Keyword
+    The await keyword can only be used inside an async function. 
+    It pauses the execution of the function until the Promise is resolved, 
+    and then returns the resolved value. If the Promise is rejected, it throws an error 
+    that can be caught using a try/catch block.
+
+9. What is the difference between == and === operators ?
+10. Different ways to create an Object in Javascript ?
+    1. Object Literal
+        The simplest way to create an object is using an object literal.
+
+    2. Object Constructor
+        You can create an object using the Object constructor.
+
+    3. Constructor Function
+        You can define a constructor function and use the new keyword to create an instance of the object.
+    4. Object.create()
+        The Object.create() method creates a new object with the specified prototype object and properties.
+        let proto = {
+            greet: function() {
+                console.log("Hello!");
+            }
+        };
+        let obj = Object.create(proto);
+        obj.name = "John";
+        obj.age = 30;
+
+    5. ES6 Class Syntax
+        ES6 introduced classes, which provide a more convenient and clearer syntax to create constructor functions and handle inheritance.
+    6. Factory Function
+        A factory function is a function that returns a new object.
+    7. Using JSON
+        You can create an object by parsing a JSON string.
+
+
+11. What is rest and spread operator?
+    The rest operator (...) allows you to represent an indefinite number of arguments as an array. 
+    It is used in function parameters to collect all remaining arguments into a single array.
+    function sum(...numbers) {
+        return numbers.reduce((acc, curr) => acc + curr, 0);
+    }
+
+    console.log(sum(1, 2, 3, 4)); // Output: 10
+
+    The spread operator (...) allows you to expand an iterable (like an array or a string) into individual elements. 
+    It is used in various contexts, such as function calls, array literals, and object literals.
+
+12. What is a higher-order function?
+    A higher-order function is a function that either:
+        Takes one or more functions as arguments, or
+        Returns a function as its result.
+        Higher-order functions are a key feature of functional programming and allow for more abstract and flexible code.
+    
+    Benefits of Higher-Order Functions:
+        Abstraction: They allow you to abstract common patterns and behaviors, making your code more modular and reusable.
+        Flexibility: They enable you to create more flexible and composable functions.
+        Readability: They can make your code more readable and expressive by reducing boilerplate code.
+        Higher-order functions are a powerful tool in JavaScript that can help you write more concise, maintainable, and expressive code
+
+
+𝗟𝗲𝘃𝗲𝗹 𝟮: 𝗜𝗻𝘁𝗲𝗿𝗺𝗲𝗱𝗶𝗮𝘁𝗲
+13. What is Closure? What are the use cases of Closures?
+14. Explain the concept of hoisting in JavaScript.
+15. What is a Temporal dead zone?
+16. What is a prototype chain? and Object.create() method?
+    Prototype Chain: When you try to access a property or method on an object, JavaScript first looks for that property on the object itself. If it doesn't find it, it looks at the object's prototype. This process continues up the chain until the property is found or the end of the chain is reached (usually Object.prototype, which is the top of the chain)
+    The prototype chain is a fundamental concept in JavaScript that allows objects to inherit properties and methods from other objects. This chain is formed by linking objects through their prototypes, enabling a form of inheritance and property lookup.
+
+17. What is the difference between Call, Apply, and Bind methods?
+18. What are lambda or arrow functions?
+    Differences from Traditional Functions:
+    1. this Binding: Arrow functions do not have their own this context. Instead, they inherit this from the enclosing lexical context. This makes them particularly useful for writing methods inside objects or classes where you want to preserve the this context.
+
+    2. No arguments Object: Arrow functions do not have their own arguments object. If you need to access the arguments passed to an arrow function, you should use rest parameters.
+
+    3. Cannot be used as Constructors: Arrow functions cannot be used with the new keyword. They are not suitable for defining constructor functions.
+
+19. What is the currying function?
+    Currying is a powerful technique in functional programming that transforms a function with multiple arguments into a sequence of functions, each taking a single argument. 
+    It allows for partial application of functions, making it easier to create specialized functions 
+    from general ones. Currying can lead to more modular, reusable, and readable code.
+
+20. What are the features of ES6?
+    Arrow Functions, Classes, Template Literals(backtick - a way to embed expressions within string literals),
+    Destructuring Assignment, Default parameters, Rest and Spread Operators, let & const, Promises, Iterators and Generators
+
+𝗟𝗲𝘃𝗲𝗹 𝟯: 𝗘𝘅𝗽𝗲𝗿𝘁
+21. What is Execution context, execution stack, variable object, scope chain?
+22. What is the priority of execution of callback, promise, setTimeout, process.nextTick()?
+    process.nextTick() has the highest priority and is executed before any other asynchronous tasks.
+    Microtasks in microtask queues (like promises & Mutation Observers) are executed after the current synchronous code and process.nextTick().
+    Timers in callback queue (like setTimeout) are executed after microtasks.
+    I/O Callbacks are executed after timers.
+
+23. What is the Factory function and generator function?
+    Factory Function
+        A factory function is a function that returns a new object. It is a way to create objects without using the new keyword or class-based syntax. Factory functions can be used to create multiple instances of an object with similar properties and methods.
+    Generator Function
+        A generator function is a special type of function that can be paused and resumed, allowing you to produce a sequence of values over time. Generator functions are defined using the function* syntax and use the yield keyword to produce values.
+
+    Key Features of Generator Functions
+        Pause and Resume: Generator functions can be paused at any yield expression and resumed later, allowing for more control over the execution flow.
+        Iterators: Generator functions return an iterator object, which conforms to the iterator protocol and can be used in loops like for...of.
+        State Management: Generators can maintain their own state between executions, making them useful for tasks like implementing iterators, handling asynchronous operations, and more.
+
+
+24. Different ways to clone (Shallow and deep copy of object) an object?
+    Shallow Copy: Copies the object's properties, but nested objects are shared between the original and the copy.
+        Methods: Object.assign(), Spread Operator (...)
+    Deep Copy: Copies the object and all nested objects, ensuring no shared references.
+        Methods: JSON.parse(JSON.stringify()), Recursive Function, Lodash's cloneDeep
+
+25. How to make an object immutable? (seal and freeze methods)?
+    Object.freeze(): Makes an object immutable but only performs a shallow freeze.
+    Deep Freeze: Recursively freezes an object and all nested objects.  
+    Object.seal(): Prevents adding new properties and marks existing properties as non-configurable but allows modification of existing properties.
+    Immutable.js: Provides persistent immutable data structures for complex applications.
+
+26. What is Event and event flow, event bubbling and event capturing?
+    Event: An action or occurrence in the browser (e.g., click, load, keypress).
+    Event Flow: The order in which events are received and processed in the DOM.
+    Event Capturing: Event propagates from the root to the target element.
+    Event Bubbling: Event propagates from the target element to the root.
+    Event Listeners: Functions that handle events during capturing or bubbling phases.
+    Stopping Propagation: Use event.stopPropagation() to prevent further propagation of the event
+
+27. What is Event delegation?
+28. What are server-sent events?
+    Server-Sent Events (SSE)
+        Server-Sent Events (SSE) is a standard allowing servers to push real-time updates to web clients over a single, long-lived HTTP connection. Unlike WebSockets, which provide full-duplex communication, SSE is unidirectional, meaning data flows from the server to the client only.
+
+    How SSE Works
+        Client Requests Updates: The client establishes a connection to the server using a special HTTP request.
+        Server Sends Updates: The server keeps the connection open and sends updates to the client as they become available.
+        Client Receives Updates: The client listens for incoming messages and processes them as they arrive.
+    
+    Advantages of SSE
+        Simple to Implement: SSE is easier to implement compared to WebSockets, especially for unidirectional data flow.
+        Automatic Reconnection: The browser automatically handles reconnection if the connection is lost.
+        Built-in Support: SSE is supported by most modern browsers without the need for additional libraries.
+29. What is a web worker or service worker in javascript?
+
+    Web Workers are a feature in JavaScript that allows you to run scripts in background threads
+    Key Features of Web Workers
+        Background Execution: Web Workers run in the background, separate from the main execution thread.
+        Non-blocking: They allow you to perform heavy computations without freezing the UI.
+        Communication: Communication between the main thread and the worker is done via message passing using the postMessage method and the onmessage event handler.
+    Web Workers:
+        Run scripts in background threads.
+        Used for computationally intensive tasks.
+        Communicate with the main thread via message passing.
+        Example: Performing heavy computations without blocking the UI.
+    
+    Service Workers:
+        Act as a proxy between the web application and the network.
+        Enable offline support, background sync, and push notifications.
+        Have a well-defined lifecycle (install, activate, fetch).
+        Example: Caching assets for offline use and handling network requests.
+        Both Web Workers and Service Workers provide powerful capabilities for improving the performance and user experience of web applications by offloading tasks to background threads and enabling advanced features like offline support and push notifications
+30. How to compare 2 JSON objects in javascript?
