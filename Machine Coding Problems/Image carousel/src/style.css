@@ -1,0 +1,42 @@
+.image-carousel-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.image-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.carousel-pagination-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+  margin-top: 1rem;
+}
+
+.carousel-pagination-container div {
+  width: 24px;
+  height: 24px;
+  background-color: #ddd;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 0.9rem;
+  cursor: pointer;
+}
+
+.carousel-pagination-container div:hover {
+  background-color: #bbb;
+}
+
+.carousel-pagination-container .active {
+  background-color: #007bff;
+  color: white;
+  font-weight: bold;
+}
