@@ -1,0 +1,111 @@
+Why should we not have the hooks inside conditional statements?
+- Hooks in React should not be placed inside conditional statements because React relies 
+  on the order of hooks to manage their state and behavior. 
+  If hooks are placed inside conditional statements, the order in which they are called 
+  can change between renders, leading to unpredictable behavior and errors.
+
+### Key reasons:
+1. Rules of Hooks: React enforces the "Rules of Hooks" which state that hooks must be called 
+   in the same order on every render. Conditional statements can break this rule.
+   
+2. State Mismatch: React uses the order of hooks to associate state and effects with components. 
+   Changing the order can cause React to associate the wrong state or effect with the wrong hook.
+
+3. Runtime Errors: Violating the rules of hooks can lead to errors like:
+   - "React Hook "useState" is called conditionally. 
+   	  React Hooks must be called in the exact same order in every component render".
+   - Unexpected behavior in the application.
+
+
+
+
+1. You notice that one of our Next.js pages takes too long to render on the client side. The API response time is fast, but the page load is still slow. How would you debug and optimize it?
+
+	2. "Two teams work on different microfrontends using Module Federation. Team A updates a shared component’s API, breaking Team B’s implementation. Production goes down. You get the alert. How do you debug and fix this without taking the entire app offline?"
+	✅ What I'm Testing:
+		• Dependency resolution in Module Federation
+		• Hotfix strategies vs long-term solutions
+		• Handling shared state in microfrontends
+	🎯 Follow-ups to Increase Complexity:
+		• "How would you prevent this in the future without slowing down development?"
+		• "Would TypeScript alone have prevented this? Why or why not?"
+	No knowledge on microfrontends. 
+	
+	3. "A React page with large datasets (100K+ items) renders slowly. Profiler shows Redux state updates are the bottleneck. The UI lags even when using React.memo. What’s happening and how do you fix it?"
+	✅ What I'm Testing:
+		• Deep state mutations in Redux
+		• Efficient state normalization
+		• Batching actions & reducing re-renders
+	🎯 Follow-ups for More Depth:
+		• "Would switching to Zustand help? Why/why not?"
+		• "How would you implement pagination or virtualization here?"
+		• 
+Redux -doesn’t know definition. Knows the flow but doesn't know how it works. 
+
+	Explained about pagination but was unable to explain optimisation on UI
+	
+	4. How does SSR work and is it better ? 
+	Candidate has basic knowledge what SSR does but no idea what how it works. 
+	5. "A new Next.js release introduces an unexpected memory leak, causing the app to crash after 1 hour. Logs don’t help. How do you diagnose the issue and apply a fix without redeploying the full application?"
+	✅ What I'm Testing:
+		• Memory profiling in Node.js
+		• Hotfix strategies (patching vs rollback vs feature flag)
+		• Incremental deployments & canary releases
+	🎯 Follow-ups for More Depth:
+		• "How do you detect memory leaks in React?"
+		• "Would using useCallback or useMemo help here?"
+
+	Answered saying we need to find bug and fix and deploy but didn’t tell me why memory leaks happen and how to resolve then
+
+	6. "What would be a reason NOT to move away from Redux?"
+
+	"If you had to remove Redux from a Next.js 14 app completely, what would be your new approach for state management?"
+	
+	Has knowledge on redux but doesn’t know it’s internal working which will be crucial to use redux toolkit or new tools that come up to evaluate
+
+	7. How chat gpt gives response in a character by character format
+	Candidate didn’t answer about web sockets 
+
+	8. "Your app uses JWT-based authentication. Users report getting logged out randomly. What could be wrong?"
+	✅ What I’m Testing:
+		• Understanding of JWT expiration & refresh tokens
+		• Handling silent authentication
+		• Security implications (XSS, token storage best practices)
+	🎯 Follow-ups:
+		• "Would you store JWTs in localStorage or cookies? Why?"
+		• "How would you prevent token hijacking?"
+
+	Didn’t ask this question
+
+	9. "A security audit reveals that your Next.js app is vulnerable to XSS. What are some ways this could happen, and how do you fix it?"
+	✅ What I’m Testing:
+		• Escaping untrusted input
+		- React sanitization
+		- output encoding
+		• Content Security Policy (CSP)
+		- HTTPOnly cookies
+		• Handling dangerous eval() or innerHTML misuse
+	🎯 Follow-ups:
+		• "What’s the risk of dangerouslySetInnerHTML?"
+		• "Does using TypeScript help prevent XSS?"
+
+	Unable to explain how we can improve security. Candidate answered saying we can use some lobar Aries to improve this 
+
+	10. 
+
+	"Your app serves static assets through a CDN, but users in Asia experience slow loading times. How do you fix this?"
+	✅ What I’m Testing:
+		• CDN configuration (geo-distributed caching)
+		• Edge functions vs origin servers
+		• Cache headers & invalidation strategies
+	🎯 Follow-ups:
+		• "How would you use Next.js middleware to optimize latency?"
+		• "What’s the impact of stale-while-revalidate?"
+ Didn’t ask this
+
+Gave two coding question on React
+	1. A counter and double counter states which when clicked update the count but there was a bug which doesn’t increment double count
+	Candidate took some time to spot it but he was able to solve it
+	
+	2. Create a wordle game 
+Candidate didn’t know how to handle input and couldn’t proceed. He had an idea on how to solve it but couldn’t as he lacked knowledge on react.candiddate didn’t clarify doubts when problem was not understood
