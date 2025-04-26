@@ -1,0 +1,22 @@
+.App {
+  font-family: sans-serif;
+}
+
+.nested-comments {
+  border-left: 1px solid black;
+  padding: 0 20px;
+  margin: 20px 0;
+}
+
+.comment-container {
+  display: flex;
+  gap: 5px;
+}
+.button {
+  align-self: center;
+  font-size: 12px;
+  color: blue;
+  border: none;
+  background: none;
+  cursor: pointer;
+}
