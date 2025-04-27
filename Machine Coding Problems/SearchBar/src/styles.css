@@ -1,0 +1,86 @@
+h1 {
+  text-align: center;
+}
+
+/* Container for the whole search pill component */
+.box-container {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: 100%;
+  padding: 20px;
+  background-color: #f7f7f7;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Pills container */
+.pills-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+
+/* Individual pill styling */
+.pill {
+  background-color: #4caf50;
+  color: white;
+  padding: 8px 12px;
+  border-radius: 20px;
+  cursor: pointer;
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  transition: background-color 0.3s ease;
+}
+
+.pill:hover {
+  background-color: #45a049;
+}
+
+/* Text input field styling */
+.text-input {
+  padding: 8px 12px;
+  width: 100%;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 16px;
+  outline: none;
+  margin-bottom: 15px;
+  box-sizing: border-box;
+
+  &:focus {
+    border-color: #4caf50;
+  }
+}
+
+/* Suggestions container styling */
+.suggestions {
+  margin-top: 10px;
+  max-height: 300px;
+  overflow-y: auto;
+}
+
+/* Individual suggestion item styling */
+.suggestion {
+  padding: 8px 12px;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  margin-bottom: 5px;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+}
+
+.suggestion:hover {
+  background-color: #f1f1f1;
+}
+
+/* No results found message */
+.no-results {
+  color: #999;
+  font-size: 14px;
+  padding: 10px;
+}
